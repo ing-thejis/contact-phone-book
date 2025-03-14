@@ -8,8 +8,10 @@ interface CardProps extends PropsWithChildren {
   className?: string
 }
 
-interface ButtonProps extends PropsWithChildren {
+interface ButtonProps {
   onClick?: () => void
+  text?: string
+  children: (text: string) => React.ReactNode
 }
 
 const CardContext = createContext<CardContextI | null>(null)
@@ -42,10 +44,14 @@ const Description: React.FC<PropsWithChildren> = ({ children }) => {
   return <p className="">{children}</p>
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+// implement render prop pattern using children prop as a function
+const Button: React.FC<ButtonProps> = ({ children, text = "", onClick }) => {
   return (
-    <button className="" onClick={onClick}>
-      {children}
+    <button
+      className="w-fit flex items-center justify-center px-3 py-1 border border-neutral-700 rounded-sm bg-blue-400"
+      onClick={onClick}
+    >
+      {children(text)}
     </button>
   )
 }

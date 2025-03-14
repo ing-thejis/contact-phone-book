@@ -8,8 +8,8 @@ function App() {
   }))
 
   return (
-    <main className="w-full h-screen  bg-neutral-700 text-neutral-100 overflow-hidden overflow-y-scroll">
-      <section className="relative w-full h-full p-4 bg-neutral-600 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+    <main className="w-full h-screen  bg-neutral-400 text-neutral-100 overflow-hidden overflow-y-scroll">
+      <section className="relative w-full h-full p-4 bg-neutral-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {MOCK.map((item) => (
           <CardContact
             key={item.id}
